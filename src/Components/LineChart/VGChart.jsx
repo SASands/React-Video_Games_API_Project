@@ -7,18 +7,39 @@ const options = {
 };
 
 const VGChart =  ({videoGames}) => {
+    console.log(videoGames)
 
+    // filter the video games by year. 
+    let filteredGames = videoGames.filter(game => game.year > 2013);
+
+    console.log("filteredGames", filteredGames)
+
+    let platforms = filteredGames.map(game => game.platform)
+    
+    
+
+    // uniq = [...new Set(array)];
+    let singlePlatform = [...new Set(platforms)]
+    console.log("mapped platform", singlePlatform)
+
+    let platformArray = singlePlatform.map(platform => {
+        let allGamesForPlatforms = filteredGames.filter(game => game.platform == platform)
+          // now we need to loop through allGamesForPlatform and sum each games global sales
+      
+        return[platform, 10, "Fuschia"]
+    })
+    
   function GenerateChartData(){
     const data = [
       ["Platform", "Sales", {role: "style"}],
-      ["PS3", 1000, "Black"],
-      ["DS", 460, "Blue"],
-      ["x360", 1120, "Red"],
-      ["PS2", 540, "Green"],
+      ...platformArray
+
+   
     ];
+    console.log("Data", data)
+
     return data;
   }  
-
   return (    
         <div>
           <h2>Video Game Analyzation Chart</h2>
