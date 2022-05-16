@@ -2,17 +2,17 @@ import React, {useEffect, useState } from 'react';
 import { Chart } from "react-google-charts";
 
 const options = {
-  title: "Video Game Analyzation Chart",
+  title: "Video Game Detail Chart",
   legend: { position: "bottom" },
 };
 
-const VGChart =  ({videoGames}) => {
-    console.log(videoGames)
+const GDChart =  ({videoGames}) => {
+    // console.log(videoGames)
 
     // filter the video games by year. 
-    let filteredGames = videoGames.filter(game => game.year > 2013);
+    let filteredGames = videoGames.filter(game => game);
 
-    console.log("filteredGames", filteredGames)
+    // console.log("filteredGames", filteredGames)
 
     let platforms = filteredGames.map(game => game.platform)
     
@@ -20,7 +20,7 @@ const VGChart =  ({videoGames}) => {
 
     // uniq = [...new Set(array)];
     let singlePlatform = [...new Set(platforms)]
-    console.log("mapped platform", singlePlatform)
+    // console.log("mapped platform", singlePlatform)
 
     let platformArray = singlePlatform.map(platform => {
         let allGamesForPlatforms = filteredGames.filter(game => game.platform == platform)//You can also attach the reduce method like this as well--- .reduce((total, currentValue) => (total = total + currentValue.globalSales),0)
@@ -32,7 +32,7 @@ const VGChart =  ({videoGames}) => {
      
     })
       .reduce((firstIndex, lastIndex) => (firstIndex + lastIndex))
-    console.log(sumGlobalSales)
+    // console.log(sumGlobalSales)
 
 
 
@@ -47,21 +47,16 @@ const VGChart =  ({videoGames}) => {
 
    
     ];
-    console.log("Data", data)
+    // console.log("Data", data)
 
     return data;
   }  
   return (    
         <div>
-          <h2>Video Game Analyzation Chart</h2>
+          <h2>Video Game Detail Chart</h2>
           <Chart chartType="ColumnChart" options={options} width="100%" height="400px" data={GenerateChartData()}/>
         </div>
       );
 }
       
-export default VGChart;
-
-
-
-
-
+export default GDChart;

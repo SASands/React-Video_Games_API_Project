@@ -1,15 +1,20 @@
 import React, {useEffect, useState } from 'react';
 import axios from 'axios';
-import VGChart from './Components/LineChart/VGChart';
-
+import VGChart from './Components/GameChart/VGChart';
+import SearchBar from './Components/SearchBar/SearchBar';
 
 function App() {
   
   const [videoGames, setVideoGames] = useState([]);
+  // after all games are filtered we save the result here in searchGames
+  const [searchGames , setSearchGames ] = useState([]);
+  // TODO make another chart compoenent but remove the 2013 filter logic 
+  // then pass down searchGames into this new "GameDetailsChart"
+ 
 
   useEffect(() => {
     getVideoGames();
-  }, []);
+  }, []);  
 
   async function getVideoGames(){
     try{
@@ -20,10 +25,12 @@ function App() {
       console.log(`ERROR in getVideoGames EXCEPTION: ${ex}`)
     }
   }
-  
+
+
   return (
     <div>
       <VGChart videoGames={videoGames}/>
+      <SearchBar setSearchGames={setSearchGames} getVideoGames={getVideoGames} videoGames={videoGames}/>
     </div>
   );
 }
