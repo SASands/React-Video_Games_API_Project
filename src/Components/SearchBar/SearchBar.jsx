@@ -7,26 +7,30 @@ const SearchBar = (props) => {
     function SearchResult(event) {
         event.preventDefault();
         let response = props.videoGames.filter((element) => {
-            if (element.name.includes(search)) {
+            if (element.name.toLowerCase().includes(search)) {
                 return true;
             }
-            else if (element.platform.includes(search)) {
+            else if (element.platform.toLowerCase().includes(search)) {
                 return true;
             }
-            else if (element.genre.includes(search)) {
+            else if (element.genre.toLowerCase().includes(search)) {
                 return true
             }
-            else if (element.publisher.includes(search)) {
+            else if (element.publisher.toLowerCase().includes(search)) {
                 return true
             }
         })
         props.setSearchGames(response);
         console.log(response)
         setSearch('')
+        
         if (search === ''){
             props.getVideoGames()
         }
-    }
+        return true;
+        
+       
+        }
     return (   <form onSubmit={SearchResult}>
         <div>
         <input type= "text" 
@@ -39,31 +43,3 @@ const SearchBar = (props) => {
  
    
 export default SearchBar;
-
-
-    // <div onSubmit={handleSubmit}>
-    // <input type= "text" placeholder="Search here" value={searchRequest} onChange={(event) => setSearchRequest=(event.target.value)}/>
-    // </div>
-
-
-
-
-
-
-
-
-// export default InputTag(){
-//     onChange Handler function
-//     with event parameter
-//     const getInputValue = (event)=>{
-//         // show the user input value to console
-//         const userValue = event.target.value;
-
-//         console.log(userValue);
-//     };
-
-//     return (
-//         // Add onChnage handler with function to execute
-//         <input type="text" onChange={getInputValue} />
-//     );
-// }

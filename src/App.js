@@ -3,6 +3,7 @@ import axios from 'axios';
 import VGChart from './Components/VideoGameChart/VGChart';
 import SearchBar from './Components/SearchBar/SearchBar';
 import GDChart from './Components/GameDetailsChart/GDChart';
+import GDTable from './Components/GameDetailTable/GDTable';
 
 function App() {
   
@@ -33,6 +34,7 @@ function App() {
       <VGChart videoGames={videoGames}/>
       <SearchBar setSearchGames={setSearchGames} getVideoGames={getVideoGames} videoGames={videoGames}/>
       <GDChart searchGames={searchGames} getVideoGames={getVideoGames}/>
+      <GDTable searchGames={searchGames} getVideoGames={getVideoGames}/>
     </div>
   );
 }
