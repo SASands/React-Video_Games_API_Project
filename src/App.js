@@ -1,6 +1,6 @@
 import React, {useEffect, useState } from 'react';
 import axios from 'axios';
-import VGChart from './Components/GameChart/VGChart';
+import VGChart from './Components/VideoGameChart/VGChart';
 import SearchBar from './Components/SearchBar/SearchBar';
 import GDChart from './Components/GameDetailsChart/GDChart';
 
