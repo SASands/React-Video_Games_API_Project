@@ -1,9 +1,9 @@
 import React, {useEffect, useState } from 'react';
 import { Chart } from "react-google-charts";
-
+import './VGChart.css'
 const options = {
   title: "Global Game Sales 2014-Current",
-  legend: { position: "bottom" },
+  legend: { position: "bottom", color: "blue"},
 };
 
 const VGChart =  ({videoGames}) => {
@@ -52,7 +52,7 @@ const VGChart =  ({videoGames}) => {
     return data;
   }  
   return (    
-        <div>
+        <div >
           <h2>Video Game Analyzation Chart</h2>
           <Chart chartType="ColumnChart" options={options} width="100%" height="400px" data={GenerateChartData()}/>
         </div>

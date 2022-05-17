@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import './GameDetailTable.css'
 
 
 
@@ -10,21 +10,23 @@ const GDTable = ({searchGames}) => {
     
         return ( 
             
-            
+            <div class ="table" className='Table'>
                 <table className='table'>
-                     <thead className='thead-dark'>
-                        <tr className='game_fields'>
-                           <th scope="col">Game Name</th>
-                           <th scope="col">Release Year</th>
-                           <th scope="col">Genre</th>
-                           <th scope="col">Publisher</th>
+                    <div className='thead'>
+                     <thead >
+                        <tr className='theader'>
+                           <th >Game Name</th>
+                           <th >Release Year</th>
+                           <th >Genre</th>
+                           <th >Publisher</th>
                         </tr>
                     </thead>
+                    </div>
                 {searchGames.map((game) => {
                     return (
-                    <div>
+                    
                    
-                    <tbody scope="row"className='body_layout'>
+                    <tbody className='body_layout'>
                         <tr>
                             <td>{game.name}</td>
                             <td>{game.year}</td>
@@ -32,10 +34,11 @@ const GDTable = ({searchGames}) => {
                             <td>{game.publisher}</td>
                         </tr>
                     </tbody>
-                    </div>
+                    
                     );
                 })}
                 </table>
+            </div> 
               
         );
     }

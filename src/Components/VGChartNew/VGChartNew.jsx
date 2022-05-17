@@ -37,7 +37,7 @@ const VGChartNew =  ({videoGames}) => {
   }  
   return (    
         <div>
-          <h2>Which Version of a Platfrom has performed the best?</h2>
+          <h2>Highest Sales per Platform</h2>
           <Chart chartType="ColumnChart" options={options} width="100%" height="400px" data={GenerateChartData()}/>
         </div>
       );

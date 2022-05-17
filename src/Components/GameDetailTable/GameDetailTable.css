@@ -1,0 +1,19 @@
+.Table{
+    display: grid;
+    margin: 30px;
+    padding: 20px;
+
+}
+.thead{
+    display: grid;
+    /* padding-left: 20%;
+    padding-right: 20%; */
+}
+.theader{
+    padding: 20px;
+    display: flex;
+    align-content: space-around;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+}

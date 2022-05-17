@@ -5,6 +5,7 @@ import SearchBar from './Components/SearchBar/SearchBar';
 import GDChart from './Components/GameDetailsChart/GDChart';
 import GDTable from './Components/GameDetailTable/GDTable';
 import VGChartNew from './Components/VGChartNew/VGChartNew'
+import './App.css'
 
 function App() {
   
@@ -31,9 +32,10 @@ function App() {
 
   return (
     <div>
-      <SearchBar setSearchGames={setSearchGames} getVideoGames={getVideoGames} videoGames={videoGames}/>
+      <h1 className='pageHeader'>Video Game Data</h1>
       <VGChart videoGames={videoGames}/>
       <VGChartNew videoGames={videoGames} />
+      <SearchBar setSearchGames={setSearchGames} getVideoGames={getVideoGames} videoGames={videoGames}/>
       <GDChart searchGames={searchGames} getVideoGames={getVideoGames}/>
       <GDTable searchGames={searchGames} getVideoGames={getVideoGames}/>
     </div>
