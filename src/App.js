@@ -4,14 +4,14 @@ import VGChart from './Components/VideoGameChart/VGChart';
 import SearchBar from './Components/SearchBar/SearchBar';
 import GDChart from './Components/GameDetailsChart/GDChart';
 import GDTable from './Components/GameDetailTable/GDTable';
+import VGChartNew from './Components/VGChartNew/VGChartNew'
 
 function App() {
   
   const [videoGames, setVideoGames] = useState([]);
-  // after all games are filtered we save the result here in searchGames
+  // after all games are filtered we save the result here in the searchGames Hook
   const [searchGames , setSearchGames ] = useState([]);
-  // TODO make another chart compoenent but remove the 2013 filter logic 
-  // then pass down searchGames into this new "GameDetailsChart"
+  const [newData, setNewData] = useState ([]);
  
 
   useEffect(() => {
@@ -31,7 +31,8 @@ function App() {
 
   return (
     <div>
-      <VGChart videoGames={videoGames}/>
+      <VGChart newData={newData}/>
+      <VGChartNew videoGames={videoGames}/>
       <SearchBar setSearchGames={setSearchGames} getVideoGames={getVideoGames} videoGames={videoGames}/>
       <GDChart searchGames={searchGames} getVideoGames={getVideoGames}/>
       <GDTable searchGames={searchGames} getVideoGames={getVideoGames}/>
