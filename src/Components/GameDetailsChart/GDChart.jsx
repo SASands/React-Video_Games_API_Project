@@ -6,11 +6,11 @@ const options = {
   legend: { position: "bottom" },
 };
 
-const GDChart =  ({videoGames}) => {
+const GDChart =  ({searchGames}) => {
     // console.log(videoGames)
 
     // filter the video games by year. 
-    let filteredGames = videoGames.filter(game => game);
+    let filteredGames = searchGames.filter(game => game);
 
     // console.log("filteredGames", filteredGames)
 
@@ -37,7 +37,7 @@ const GDChart =  ({videoGames}) => {
 
 
 
-        return[platform, sumGlobalSales, "Magenta"]
+        return[platform, sumGlobalSales, "Blue"]
     })
     
   function GenerateChartData(){

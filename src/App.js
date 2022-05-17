@@ -2,6 +2,7 @@ import React, {useEffect, useState } from 'react';
 import axios from 'axios';
 import VGChart from './Components/GameChart/VGChart';
 import SearchBar from './Components/SearchBar/SearchBar';
+import GDChart from './Components/GameDetailsChart/GDChart';
 
 function App() {
   
@@ -31,6 +32,7 @@ function App() {
     <div>
       <VGChart videoGames={videoGames}/>
       <SearchBar setSearchGames={setSearchGames} getVideoGames={getVideoGames} videoGames={videoGames}/>
+      <GDChart searchGames={searchGames} getVideoGames={getVideoGames}/>
     </div>
   );
 }
