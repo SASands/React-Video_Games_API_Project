@@ -2,7 +2,7 @@ import React, {useEffect, useState } from 'react';
 import { Chart } from "react-google-charts";
 
 const options = {
-  title: "Video Game Detail Chart",
+  title: "Game Sales details by Platform",
   legend: { position: "bottom" },
 };
 

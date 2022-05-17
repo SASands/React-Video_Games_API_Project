@@ -2,7 +2,7 @@ import React, {useEffect, useState } from 'react';
 import { Chart } from "react-google-charts";
 
 const options = {
-  title: "Video Game Analyzation Chart",
+  title: "Global Game Sales 2014-Current",
   legend: { position: "bottom" },
 };
 
@@ -37,7 +37,7 @@ const VGChart =  ({videoGames}) => {
 
 
 
-        return[platform, sumGlobalSales, "Magenta"]
+        return[platform, sumGlobalSales, "Green"]
     })
     
   function GenerateChartData(){

@@ -11,7 +11,7 @@ function App() {
   const [videoGames, setVideoGames] = useState([]);
   // after all games are filtered we save the result here in the searchGames Hook
   const [searchGames , setSearchGames ] = useState([]);
-  const [newData, setNewData] = useState ([]);
+  
  
 
   useEffect(() => {
@@ -31,9 +31,9 @@ function App() {
 
   return (
     <div>
-      <VGChart newData={newData}/>
-      <VGChartNew videoGames={videoGames}/>
       <SearchBar setSearchGames={setSearchGames} getVideoGames={getVideoGames} videoGames={videoGames}/>
+      <VGChart videoGames={videoGames}/>
+      <VGChartNew videoGames={videoGames} />
       <GDChart searchGames={searchGames} getVideoGames={getVideoGames}/>
       <GDTable searchGames={searchGames} getVideoGames={getVideoGames}/>
     </div>

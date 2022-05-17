@@ -2,15 +2,15 @@ import React, {useEffect, useState } from 'react';
 import { Chart } from "react-google-charts";
 
 const options = {
-  title: "Global sales for Year 2020-Current",
+  title: "Historical Global sales for all Platforms",
   legend: { position: "bottom" },
 };
 
-const VGChart =  ({newData}) => {
+const VGChartNew =  ({videoGames}) => {
      
-    let filteredGames = newData.filter(game => game.year > 2020);
+    let filteredGames = videoGames.filter(game => game.year);
 
-    let platforms = filteredGames.map(game => game.platform)
+    let platforms = filteredGames.map(game => game.platform);
     
 
     let singlePlatform = [...new Set(platforms)]
@@ -37,13 +37,13 @@ const VGChart =  ({newData}) => {
   }  
   return (    
         <div>
-          <h2>Video Game Analyzation Chart</h2>
+          <h2>Which Version of a Platfrom has performed the best?</h2>
           <Chart chartType="ColumnChart" options={options} width="100%" height="400px" data={GenerateChartData()}/>
         </div>
       );
 }
       
-export default VGChart;
+export default VGChartNew;
 
 
 
